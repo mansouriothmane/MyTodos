@@ -1,0 +1,2 @@
+# DELETE a specific task by ID
+DELETE http://localhost:8000/tasks/042d5353-f963-4cca-b1e5-226ff5293ba4

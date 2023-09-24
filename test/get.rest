@@ -1,0 +1,2 @@
+# GET a specific task by ID
+GET http://localhost:8000/tasks/96083d80-5239-4686-90df-51e6aa20d25d
