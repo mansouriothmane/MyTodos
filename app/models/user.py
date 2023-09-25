@@ -13,7 +13,7 @@ class UserModel(Base):
     )
     name = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
-    hashed_password = Column(String, nullable=True)
+    hashed_password = Column(String, nullable=False)
 
     created_at = Column(
         TIMESTAMP(timezone=True), nullable=False, server_default=text("now()")
