@@ -1,0 +1,7 @@
+# PUT (update) an existing task by ID
+PUT http://localhost:8000/tasks/a28ea175-4c56-4ae1-b3c0-1f305250a27f
+Content-Type: application/json
+
+{
+  "description": "Description updated"
+}

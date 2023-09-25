@@ -1,19 +1,19 @@
 import uuid
 
-from sqlalchemy import TIMESTAMP, Column, ForeignKey, String, Boolean, text
+from sqlalchemy import TIMESTAMP, Column, String, text
 from sqlalchemy.dialects.postgresql import UUID
 
 from app.database import Base
 
 
-class TaskModel(Base):
-    __tablename__ = "tasks"
+class UserModel(Base):
+    __tablename__ = "users"
     id = Column(
         UUID(as_uuid=True), primary_key=True, nullable=False, default=uuid.uuid4
     )
-    title = Column(String, nullable=False)
-    description = Column(String, nullable=True)
-    done = Column(Boolean, default=False)
+    name = Column(String, nullable=False)
+    email = Column(String, unique=True, nullable=False)
+    hashed_password = Column(String, nullable=True)
 
     created_at = Column(
         TIMESTAMP(timezone=True), nullable=False, server_default=text("now()")
@@ -24,5 +24,3 @@ class TaskModel(Base):
         server_default=text("now()"),
         onupdate=text("now()"),
     )
-
-    user_id = Column(UUID(as_uuid=True), ForeignKey("users.id"), nullable=False)

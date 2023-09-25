@@ -8,6 +8,8 @@ class Settings(BaseSettings):
     POSTGRES_DB: str
     POSTGRES_HOSTNAME: str
 
+    TOKEN_KEY: str
+
     class Config:
         env_file = "./.env"
 

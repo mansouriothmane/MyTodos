@@ -3,5 +3,6 @@ POST http://localhost:8000/tasks
 Content-Type: application/json
 
 {
-  "title": "New Task"
+    "title": "New task",
+    "user_id": "32aa2e17-280d-4da8-8af0-23dacf805188"
 }

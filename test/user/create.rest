@@ -1,0 +1,9 @@
+# POST (create) a new user
+POST http://localhost:8000/users
+Content-Type: application/json
+
+{
+    "name": "myname4",
+    "email": "myemail4@yahoo.fr",
+    "password": "mypassword4" 
+}

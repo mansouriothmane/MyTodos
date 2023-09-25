@@ -7,7 +7,7 @@ from app.database import get_db
 from app.models.task import TaskModel
 from app.schemas.task import TaskCreateSchema, TaskUpdateSchema, TaskResponse
 
-router = APIRouter(prefix="/tasks")
+router = APIRouter(prefix="/tasks", tags=["Tasks"])
 
 
 # Retrieve all tasks
@@ -23,7 +23,7 @@ async def get_task(id: str, db: Session = Depends(get_db)) -> TaskResponse:
     task = db.query(TaskModel).filter(TaskModel.id == id).first()
     if not task:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail=f"Task {id} not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail=f"Task not found"
         )
     return task
 
@@ -37,7 +37,7 @@ async def update_task(
     updated_task = task_query.first()
     if not updated_task:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail=f"Task {id} not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail=f"Task not found"
         )
     task_query.update(task.model_dump(exclude_unset=True), synchronize_session=False)
     db.commit()
@@ -63,7 +63,7 @@ async def delete(id: str, db: Session = Depends(get_db)):
     task_to_delete = task_query.first()
     if not task_to_delete:
         raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail=f"Task {id} not found"
+            status_code=status.HTTP_404_NOT_FOUND, detail=f"Task not found"
         )
     task_query.delete(synchronize_session=False)
     db.commit()
