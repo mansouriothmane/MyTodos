@@ -10,13 +10,15 @@ from app.schemas.user import UserBaseSchema
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token", auto_error=False)
 
 
-async def require_user(token: str = Depends(oauth2_scheme)) -> int | None:
+async def require_user(token: str = Depends(oauth2_scheme)) -> int:
     if token is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail=f"Invalid token"
         )
     try:
-        payload = jwt.decode(token, settings.TOKEN_KEY)
+        payload = jwt.decode(
+            token, settings.JWT_SECRET, algorithms=[settings.JWT_ALGORITHM]
+        )
         user_id = payload.get("sub")
         if user_id is None:
             raise HTTPException(
@@ -27,4 +29,3 @@ async def require_user(token: str = Depends(oauth2_scheme)) -> int | None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED, detail=f"Invalid credentials"
         )
-    return None

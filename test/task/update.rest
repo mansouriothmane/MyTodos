@@ -1,6 +1,7 @@
 # PUT (update) an existing task by ID
-PUT http://localhost:8000/tasks/a28ea175-4c56-4ae1-b3c0-1f305250a27f
+PUT http://localhost:8000/tasks/96083d80-5239-4686-90df-51e6aa20d25d
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXluYW1lNSIsInN1YiI6ImYxYjE3ZDA2LWY1NzEtNDMzNC05MmY4LTY4OGUwNGJiMTRjOSJ9.Em9VLjwC1vqurMUpplG89pV7TtAo-8RK08F075ne5BY
 
 {
   "description": "description updated"

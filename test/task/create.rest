@@ -1,8 +1,8 @@
 # POST (create) a new task
 POST http://localhost:8000/tasks
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXluYW1lNSIsInN1YiI6ImYxYjE3ZDA2LWY1NzEtNDMzNC05MmY4LTY4OGUwNGJiMTRjOSJ9.Em9VLjwC1vqurMUpplG89pV7TtAo-8RK08F075ne5BY
 
 {
-    "title": "New task",
-    "user_id": "32aa2e17-280d-4da8-8af0-23dacf805188"
+    "title": "New task"
 }
