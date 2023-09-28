@@ -16,7 +16,6 @@ class TaskCreateSchema(TaskBaseSchema):
 
 class TaskResponse(TaskBaseSchema):
     id: UUID4
-    user_id: UUID4
     created_at: datetime
     updated_at: datetime
 
@@ -29,4 +28,4 @@ class TaskListResponse(BaseModel):
 class TaskUpdateSchema(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
-    done: Optional[str] = None
+    done: bool = None

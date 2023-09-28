@@ -1,6 +1,7 @@
 import jwt
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordRequestForm
 
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
@@ -18,7 +19,7 @@ router = APIRouter(prefix="/token", tags=["Authentication"])
 # Request for authentication token
 @router.post("/", response_model=TokenSchema)
 async def authenticate(
-    login: LoginSchema, db: Session = Depends(get_db)
+    login: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)
 ) -> TokenSchema:
     user = db.query(UserModel).filter(UserModel.email == login.username).first()
     if not user:
@@ -38,5 +39,5 @@ async def authenticate(
         )
     # Create access token
     payload = {"name": user.name, "sub": str(user.id)}
-    access_token = jwt.encode(payload, settings.TOKEN_KEY)
+    access_token = jwt.encode(payload, settings.JWT_SECRET)
     return TokenSchema(access_token=access_token, token_type="bearer")
