@@ -7,8 +7,8 @@ from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 
 from app.config import settings
-from app.database import get_db
-from app.models.user import UserModel
+from app.database import get_session
+from app.models.user import UserOrm
 from app.schemas.auth import LoginSchema, TokenSchema
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -19,9 +19,9 @@ router = APIRouter(prefix="/token", tags=["Authentication"])
 # Request for authentication token
 @router.post("/", response_model=TokenSchema)
 async def authenticate(
-    login: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)
+    login: OAuth2PasswordRequestForm, session: Session = Depends(get_session)
 ) -> TokenSchema:
-    user = db.query(UserModel).filter(UserModel.email == login.username).first()
+    user = session.query(UserOrm).filter(UserOrm.email == login.username).first()
     if not user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND,

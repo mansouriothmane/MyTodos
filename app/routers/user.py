@@ -3,8 +3,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from passlib.context import CryptContext
 
-from app.database import get_db
-from app.models.user import UserModel
+from app.database import get_session
+from app.models.user import UserOrm
 from app.schemas.user import UserCreateSchema, UserResponse
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -15,15 +15,15 @@ router = APIRouter(prefix="/users", tags=["Users"])
 # Create a new user
 @router.post("/", response_model=UserResponse)
 async def create_user(
-    user: UserCreateSchema, db: Session = Depends(get_db)
+    user: UserCreateSchema, session: Session = Depends(get_session)
 ) -> UserResponse:
-    user_model = UserModel(
+    user_model = UserOrm(
         name=user.name,
         email=user.email,
         hashed_password=pwd_context.hash(user.password),
     )
-    db.add(user_model)
-    db.commit()
-    db.refresh(user_model)
-    user_response = db.query(UserModel).filter(UserModel.email == user.email).first()
+    session.add(user_model)
+    session.commit()
+    session.refresh(user_model)
+    user_response = session.query(UserOrm).filter(UserOrm.email == user.email).first()
     return user_response
