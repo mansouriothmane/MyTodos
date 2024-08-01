@@ -1,3 +1,0 @@
-# GET all tasks
-GET http://localhost:8000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXluYW1lNSIsInN1YiI6ImYxYjE3ZDA2LWY1NzEtNDMzNC05MmY4LTY4OGUwNGJiMTRjOSJ9.Em9VLjwC1vqurMUpplG89pV7TtAo-8RK08F075ne5BY

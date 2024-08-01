@@ -1,3 +1,0 @@
-# DELETE a specific task by ID
-DELETE http://localhost:8000/tasks/adad22e9-07d0-4f72-9b77-cd2efa1a0834
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibXluYW1lNSIsInN1YiI6ImYxYjE3ZDA2LWY1NzEtNDMzNC05MmY4LTY4OGUwNGJiMTRjOSJ9.Em9VLjwC1vqurMUpplG89pV7TtAo-8RK08F075ne5BY

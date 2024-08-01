@@ -6,7 +6,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from app.database import Base
 
 
-class TaskOrm(Base):
+class Task(Base):
     __tablename__ = "tasks"
     id = Column(
         UUID(as_uuid=True), primary_key=True, nullable=False, default=uuid.uuid4

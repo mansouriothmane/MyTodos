@@ -11,7 +11,7 @@ class Settings(BaseSettings):
     JWT_SECRET: str
     JWT_ALGORITHM: str
 
-    class Config:
+    class ConfigDict:
         env_file = "./.env"
 
 

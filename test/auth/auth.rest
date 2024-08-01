@@ -1,8 +1,0 @@
-# Login
-POST http://localhost:8000/token
-Content-Type: application/json
-
-{
-    "username": "myemail5@yahoo.fr",
-    "password": "mypassword5"
-}
