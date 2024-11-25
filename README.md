@@ -1,4 +1,4 @@
-# Task Management API
+# MyTodos
 
 A basic Task Management API created using the FastAPI framework. It allows you to manage tasks and users, by creating new tasks, updating existing tasks, retrieving task details, and deleting tasks. It also include an authentication feature using the OAuth 2.0 protocole. The data is persisted in a PostgreSQL database.
 
