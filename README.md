@@ -6,13 +6,13 @@ A basic Task Management API created using the FastAPI framework. It allows you t
 
 - **FastAPI Framework**: Learned how to create and structure a RESTful API using FastAPI, focusing on routing, request handling, and dependency injection.
 
-- **Database Integration with PostgreSQL**: Gained experience setting up and connecting to a PostgreSQL database, including configuring database credentials and managing tables.
+- **Database Integration with PostgreSQL**: Learned setting up and connecting to a PostgreSQL database, including configuring database credentials and managing tables.
 
 - **Authentication with OAuth2**: Implemented basic authentication using OAuth2, learning how to secure API endpoints and manage access tokens.
 
 - **Schema Design**: Practiced defining Pydantic models for request validation and response schemas, improving data handling consistency.
 
-- **Environment Configuration**: Understood how to use .env files for secure storage of environment variables, such as database credentials.
+- **Environment Configuration**: Learned how to use .env files for secure storage of environment variables, such as database credentials.
 
 - **API Testing and Debugging**: Explored debugging tools and tested API endpoints using tools like Postman or cURL.
 
