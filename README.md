@@ -1,6 +1,6 @@
 # Task Management API
 
-A basic Task Management API created using the FastAPI framework and a PostgreSQL database. It allows you to manage tasks and users, by creating new tasks, updating existing tasks, retrieving task details, and deleting tasks. It also include an authentification feature, using the OAuth 2.0 protocole. Here's how to get started:
+A basic Task Management API created using the FastAPI framework. It allows you to manage tasks and users, by creating new tasks, updating existing tasks, retrieving task details, and deleting tasks. It also include an authentication feature, using the OAuth 2.0 protocole. The data is persisted in a PostgreSQL database. Here's how to get started:
 
 ## Installation
 
