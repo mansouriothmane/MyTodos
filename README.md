@@ -4,24 +4,29 @@ A basic Task Management API created using the FastAPI framework. It allows you t
 
 ## What I Learned
 
-- FastAPI Framework: Learned how to create and structure a RESTful API using FastAPI, focusing on routing, request handling, and dependency injection.
-- Database Integration with PostgreSQL: Gained experience setting up and connecting to a PostgreSQL database, including configuring database credentials and managing tables.
-- Authentication with OAuth2: Implemented basic authentication using OAuth2, learning how to secure API endpoints and manage access tokens.
-- Schema Design: Practiced defining Pydantic models for request validation and response schemas, improving data handling consistency.
-- Environment Configuration: Understood how to use .env files for secure storage of environment variables, such as database credentials.
-- API Testing and Debugging: Explored debugging tools and tested API endpoints using tools like Postman or cURL.
+- **FastAPI Framework**: Learned how to create and structure a RESTful API using FastAPI, focusing on routing, request handling, and dependency injection.
+
+- **Database Integration with PostgreSQL**: Gained experience setting up and connecting to a PostgreSQL database, including configuring database credentials and managing tables.
+
+- **Authentication with OAuth2**: Implemented basic authentication using OAuth2, learning how to secure API endpoints and manage access tokens.
+
+- **Schema Design**: Practiced defining Pydantic models for request validation and response schemas, improving data handling consistency.
+
+- **Environment Configuration**: Understood how to use .env files for secure storage of environment variables, such as database credentials.
+
+- **API Testing and Debugging**: Explored debugging tools and tested API endpoints using tools like Postman or cURL.
 
 ## Installation
 
 1. Clone this repository to your local machine:
 
-   ```
+   ```bash
    git clone https://github.com/mansouriothmane/task_management_api
    ```
 
 2. Create a virtual environment for the project:
 
-   ```
+   ```bash
    python -m venv venv
    ```
 
@@ -35,13 +40,13 @@ A basic Task Management API created using the FastAPI framework. It allows you t
 
    - On macOS and Linux:
 
-     ```
+     ```bash
      source venv/bin/activate
      ```
 
 4. Install the required packages:
 
-   ```
+   ```bash
    pip install -r requirements.txt
    ```
 
@@ -49,7 +54,7 @@ A basic Task Management API created using the FastAPI framework. It allows you t
 
 To run the API locally, execute `main.py`, or use the following command from the command line:
 
-```
+```bash
 uvicorn app.main:app
 ```
 
